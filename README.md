@@ -39,16 +39,23 @@ CRUD для всех моделей (запрещено обновление ч�
 #### 1. Создать и активировать виртуальное окружение
 
 python3 -m venv venv
-
 venv/Scripts/activate
 #### 2. Установить зависимости проекта 
 pip install -r requirements.txt
+
 #### 3. Выполнить миграции
 python manage.py migrate
-#### 4. Загрузить данные
-python manage.py loaddata ...
 
-python manage.py loaddata ...
+#### 4. Создать админа и модератора
 
-#### 5. Запустить сервер
+python manage.py csu
+python manage.py create_user
+
+#### 6. Заполнить базы данных
+
+python manage.py loaddata users
+
+python manage.py loaddata main
+
+#### 6. Запустить сервер
 python manage.py runserver
